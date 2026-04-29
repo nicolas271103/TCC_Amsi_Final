@@ -1,9 +1,0 @@
-{
-  "usuarios": [
-    {
-      "id": 1,
-      "email": "admin@gmail.com",
-      "senha": "1234"
-    }
-  ]
-}

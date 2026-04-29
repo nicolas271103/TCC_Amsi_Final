@@ -4,11 +4,10 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 // 🔐 LOGIN
 // ======================
 export const loginUser = async (email, senha) => {
-  const response = await fetch(`${BASE_URL}/https://amsi-project-chzs.vercel.app/auth/token/`, {
+  const response = await fetch(`${BASE_URL}/auth/token/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "ngrok-skip-browser-warning": "true",
     },
     body: JSON.stringify({
       login: email,

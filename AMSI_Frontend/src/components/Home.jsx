@@ -1,26 +1,21 @@
-import { useEffect, useState } from "react";
-import "../styles/home.css";
-import News from "./News";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../services/auth";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
-    <div className="home-container">
-      <h1>Bem-vindo ao sistema</h1>
-      <p>Você está logado</p>
+    <div>
+      <h1>Home</h1>
 
-      <div className="cards">
-        <div className="card">Usuários</div>
-        <div className="card">Relatórios</div>
-        <div className="card">Configurações</div>
-        <div className="button">Lançamentos</div>
-      </div>
-
-        <div className="card" onClick={() => navigate("/lancamento")}>
-            <h3>Lançamentos</h3>
-          <p>Cadastrar e gerenciar</p>
-        </div>
-
-      <News />
+      <button onClick={handleLogout}>
+        Sair
+      </button>
     </div>
   );
 }
